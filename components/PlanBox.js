@@ -17,7 +17,7 @@ export default function PlanBox({ plan }) {
             </div>
           ))}
         </div>
-        <Link href="https://wa.me/+96181026095?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C">
+        <Link href={`https://wa.me/+96181026095?text=${plan.message}`}>
           <div className="contactbtn">
             <button className="orderNow">
               <span className="icon">

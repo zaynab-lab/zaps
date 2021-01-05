@@ -13,7 +13,8 @@ const plans = [
       "Installable on IOS/Android/..",
       "Arabic & English",
       "Scanable with QR code"
-    ]
+    ],
+    message: "Hi, I am .......... I want to get the Basic plan"
   },
   {
     title: "STANDARD",
@@ -28,7 +29,8 @@ const plans = [
       "Scanable with QR code",
       "Recieve orders over Whatsapp",
       "Marketing services (addintional fees required)"
-    ]
+    ],
+    message: "Hi, I am .......... I want to get the Standard plan"
   },
   {
     title: "PRO",
@@ -44,7 +46,8 @@ const plans = [
       "Recieve orders over Client app",
       "Saving Data + Business Insights",
       "Marketing services (addintional fees required)"
-    ]
+    ],
+    message: "Hi, I am .......... I want to get the Pro plan"
   }
 ];
 
