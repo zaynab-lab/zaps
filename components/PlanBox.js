@@ -9,21 +9,23 @@ export default function PlanBox({ plan }) {
           <TitleBox title={plan.title} color={plan.color} />
         </div>
         <div className="boxContent">
-          <div className="month">{plan.month}</div>
-          <div>
-            <span className="annual">{plan.annual}</span>
-            <span className="annualD">(annual)</span>
-          </div>
-          <div className="content">
-            {plan.content.map((item, i) => (
-              <div key={i} className="item">
-                {item}
-              </div>
-            ))}
+          <div className="boxDetails">
+            <div className="month">{plan.month}</div>
+            <div>
+              <span className="annual">{plan.annual}</span>
+              <span className="annualD">(annual)</span>
+            </div>
+            <div className="content">
+              {plan.content.map((item, i) => (
+                <div key={i} className="item">
+                  {item}
+                </div>
+              ))}
+            </div>
           </div>
           <div className="btnContainer">
             <Link href={`https://wa.me/+96181026095?text=${plan.message}`}>
-              <button className="orderNow">
+              <button className="orderNowbtn">
                 <span className="icon">
                   <FaWhatsapp />
                 </span>
@@ -58,9 +60,24 @@ export default function PlanBox({ plan }) {
           width: 100%;
           display: flex;
           flex-direction: column;
-          justify-content: space-between;
           align-items: center;
         }
+        .boxDetails {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          flex: 0 1 28rem;
+        }
+        .btnContainer {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-between;
+          padding-bottom: 2rem;
+        }
+
         .month {
           font-size: 2.4rem;
           font-family: "Quattrocento";
@@ -92,7 +109,6 @@ export default function PlanBox({ plan }) {
           font-size: 1.1rem;
           width: 100%;
           padding: 1.6rem;
-          height: 25rem;
         }
         .item {
           margin: 1.2rem 0;
@@ -104,25 +120,17 @@ export default function PlanBox({ plan }) {
           margin: 0 0.5rem;
         }
         .img {
-          width: 100%;
-          padding: 2rem;
-          width: 15rem;
-        }
-        .btnContainer {
-          display: flex;
-          flex-direction: column;
+          padding: 2rem 4rem;
         }
 
-        .orderNow {
+        .orderNowbtn {
           display: flex;
           justify-content: center;
           font-size: 1.5rem;
           color: ${plan.color};
-          background: ${plan.color};
           border-radius: 0.5rem;
           padding: 0.5rem 1rem;
           margin-top: auto;
-          margin-bottom: 2rem;
           border: 1px solid ${plan.color};
           background: white;
           animation: Animation 10s ease 0s infinite normal none;

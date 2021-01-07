@@ -12,7 +12,8 @@ const plans = [
       "Menu website",
       "Installable on IOS/Android/..",
       "Arabic & English",
-      "Scanable with QR code"
+      "Scanable with QR code",
+      "Marketing services (addintional fees apply)"
     ],
     message: "Hi, I am .......... I want to get the Basic plan",
     img: "Drop-Cafe"
