@@ -75,7 +75,7 @@ export default function PlanBox({ plan }) {
           flex-direction: column;
           align-items: center;
           justify-content: space-between;
-          padding-bottom: 2rem;
+          ${!plan.img && "padding-bottom: 2rem"};
         }
 
         .month {
