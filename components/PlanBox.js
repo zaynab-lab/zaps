@@ -120,7 +120,11 @@ export default function PlanBox({ plan }) {
           margin: 0 0.5rem;
         }
         .img {
-          padding: 2rem 4rem;
+          flex: 0 1 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 2rem 3rem;
         }
 
         .orderNowbtn {
