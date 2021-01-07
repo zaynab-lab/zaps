@@ -8,25 +8,35 @@ export default function PlanBox({ plan }) {
         <div className="boxTitle">
           <TitleBox title={plan.title} color={plan.color} />
         </div>
-        <div className="month">{plan.month}</div>
-        <div className="annual">{plan.annual}</div>
-        <div className="content">
-          {plan.content.map((item, i) => (
-            <div key={i} className="item">
-              {item}
-            </div>
-          ))}
-        </div>
-        <Link href={`https://wa.me/+96181026095?text=${plan.message}`}>
-          <div className="contactbtn">
-            <button className="orderNow">
-              <span className="icon">
-                <FaWhatsapp />
-              </span>
-              <span>Order Now</span>
-            </button>
+        <div className="boxContent">
+          <div className="month">{plan.month}</div>
+          <div>
+            <span className="annual">{plan.annual}</span>
+            <span className="annualD">(annual)</span>
           </div>
-        </Link>
+          <div className="content">
+            {plan.content.map((item, i) => (
+              <div key={i} className="item">
+                {item}
+              </div>
+            ))}
+          </div>
+          <div className="btnContainer">
+            <Link href={`https://wa.me/+96181026095?text=${plan.message}`}>
+              <button className="orderNow">
+                <span className="icon">
+                  <FaWhatsapp />
+                </span>
+                <span>Order Now</span>
+              </button>
+            </Link>
+            {plan.img && (
+              <div className="img">
+                <img width="100%" src={`/img/${plan.img}.png`} alt={plan.img} />
+              </div>
+            )}
+          </div>
+        </div>
       </div>
       <style jsx>{`
         .container {
@@ -43,6 +53,13 @@ export default function PlanBox({ plan }) {
         }
         .boxTitle {
           transform: translateY(-2rem);
+        }
+        .boxContent {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
         }
         .month {
           font-size: 2.4rem;
@@ -65,13 +82,17 @@ export default function PlanBox({ plan }) {
 
         .annual:after {
           font-size: 0.8rem;
-          content: "/annual";
+          content: "/month";
+        }
+        .annualD {
+          font-size: 0.5rem;
         }
         .content {
           color: grey;
           font-size: 1.1rem;
           width: 100%;
           padding: 1.6rem;
+          height: 25rem;
         }
         .item {
           margin: 1.2rem 0;
@@ -82,8 +103,17 @@ export default function PlanBox({ plan }) {
         .icon {
           margin: 0 0.5rem;
         }
+        .img {
+          width: 100%;
+          padding: 2rem;
+          width: 15rem;
+        }
+        .btnContainer {
+          display: flex;
+          flex-direction: column;
+        }
+
         .orderNow {
-          bottom: 0;
           display: flex;
           justify-content: center;
           font-size: 1.5rem;

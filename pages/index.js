@@ -14,7 +14,8 @@ const plans = [
       "Arabic & English",
       "Scanable with QR code"
     ],
-    message: "Hi, I am .......... I want to get the Basic plan"
+    message: "Hi, I am .......... I want to get the Basic plan",
+    img: "Drop-Cafe"
   },
   {
     title: "STANDARD",
@@ -28,9 +29,10 @@ const plans = [
       "Arabic & English",
       "Scanable with QR code",
       "Recieve orders over Whatsapp",
-      "Marketing services (addintional fees required)"
+      "Marketing services (addintional fees apply)"
     ],
-    message: "Hi, I am .......... I want to get the Standard plan"
+    message: "Hi, I am .......... I want to get the Standard plan",
+    img: "Za-Market"
   },
   {
     title: "PRO",
@@ -45,7 +47,7 @@ const plans = [
       "Scanable with QR code + B card",
       "Recieve orders over Client app",
       "Saving Data + Business Insights",
-      "Marketing services (addintional fees required)"
+      "Marketing services (addintional fees apply)"
     ],
     message: "Hi, I am .......... I want to get the Pro plan"
   }
