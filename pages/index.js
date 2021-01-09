@@ -21,8 +21,8 @@ const plans = [
   {
     title: "STANDARD",
     color: "#F0A260",
-    month: "199",
-    annual: "170",
+    month: "99",
+    annual: "89",
     percent: "20",
     content: [
       "Web application",
@@ -39,7 +39,7 @@ const plans = [
     title: "PRO",
     color: "#0ABAB5",
     month: "299",
-    annual: "260",
+    annual: "270",
     percent: "40",
     content: [
       "Web application (2 Sides)  ",
@@ -50,7 +50,8 @@ const plans = [
       "Saving Data + Business Insights",
       "Marketing services (addintional fees apply)"
     ],
-    message: "Hi, I am .......... I want to get the Pro plan"
+    message: "Hi, I am .......... I want to get the Pro plan",
+    img: "Za-Market"
   }
 ];
 

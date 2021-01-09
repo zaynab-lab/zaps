@@ -1,6 +1,9 @@
 import TitleBox from "./TitleBox";
 import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa";
+import { useState } from "react";
+import Costs from "./Costs";
+
 export default function PlanBox({ plan }) {
   return (
     <>
@@ -10,11 +13,8 @@ export default function PlanBox({ plan }) {
         </div>
         <div className="boxContent">
           <div className="boxDetails">
-            <div className="month">{plan.month}</div>
-            <div>
-              <span className="annual">{plan.annual}</span>
-              <span className="annualD">(annual)</span>
-            </div>
+            <div className="solutions">Solutions</div>
+            <div>for you</div>
             <div className="content">
               {plan.content.map((item, i) => (
                 <div key={i} className="item">
@@ -24,6 +24,12 @@ export default function PlanBox({ plan }) {
             </div>
           </div>
           <div className="btnContainer">
+            {plan.img && (
+              <div className="img">
+                <img width="100%" src={`/img/${plan.img}.png`} alt={plan.img} />
+              </div>
+            )}
+            <Costs plan={plan} />
             <Link href={`https://wa.me/+96181026095?text=${plan.message}`}>
               <button className="orderNowbtn">
                 <span className="icon">
@@ -32,11 +38,6 @@ export default function PlanBox({ plan }) {
                 <span>Order Now</span>
               </button>
             </Link>
-            {plan.img && (
-              <div className="img">
-                <img width="100%" src={`/img/${plan.img}.png`} alt={plan.img} />
-              </div>
-            )}
           </div>
         </div>
       </div>
@@ -45,7 +46,7 @@ export default function PlanBox({ plan }) {
           border: 1px solid grey;
           border-radius: 0.5rem;
           margin: 0.5rem;
-          flex: 0 1 20rem;
+          flex: 0 1 22rem;
           display: flex;
           background: white;
           flex-direction: column;
@@ -55,6 +56,10 @@ export default function PlanBox({ plan }) {
         }
         .boxTitle {
           transform: translateY(-2rem);
+        }
+        .solutions {
+          font-size: 2.2rem;
+          color: ${plan.color};
         }
         .boxContent {
           width: 100%;
@@ -67,9 +72,11 @@ export default function PlanBox({ plan }) {
           display: flex;
           flex-direction: column;
           align-items: center;
-          flex: 0 1 28rem;
+          flex: 1 1 27rem;
+          overflow: hidden;
         }
         .btnContainer {
+          padding-bottom: 2rem;
           width: 100%;
           display: flex;
           flex-direction: column;
@@ -78,53 +85,31 @@ export default function PlanBox({ plan }) {
           ${!plan.img && "padding-bottom: 2rem"};
         }
 
-        .month {
-          font-size: 2.4rem;
-          font-family: "Quattrocento";
-        }
-        .month:before {
-          font-size: 2.6rem;
-          content: " $ ";
-        }
-        .month:after {
-          font-size: 1rem;
-          content: "/month";
-        }
-        .annual {
-          margin: 0.5rem;
-        }
-        .annual:before {
-          content: " $ ";
-        }
-
-        .annual:after {
-          font-size: 0.8rem;
-          content: "/month";
-        }
-        .annualD {
-          font-size: 0.5rem;
-        }
         .content {
           color: grey;
           font-size: 1.1rem;
           width: 100%;
           padding: 1.6rem;
         }
+
         .item {
           margin: 1.2rem 0;
         }
+
         .item:before {
           content: " - ";
         }
+
         .icon {
           margin: 0 0.5rem;
         }
+
         .img {
           flex: 0 1 100%;
           display: flex;
           justify-content: center;
           align-items: center;
-          padding: 2rem 3rem;
+          padding: 0.5rem 3rem;
         }
 
         .orderNowbtn {
