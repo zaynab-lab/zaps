@@ -13,10 +13,12 @@ const plans = [
       "Installable on IOS/Android/..",
       "Arabic & English",
       "Scanable with QR code",
+      "Recieve orders over Whatsapp",
       "Marketing services (addintional fees apply)"
     ],
     message: "Hi, I am .......... I want to get the Basic plan",
-    img: "Drop-Cafe"
+    img: "Drop-Cafe",
+    link: "https://drop-cafe.vercel.app/"
   },
   {
     title: "STANDARD",
@@ -33,7 +35,8 @@ const plans = [
       "Marketing services (addintional fees apply)"
     ],
     message: "Hi, I am .......... I want to get the Standard plan",
-    img: "Za-Market"
+    img: "Za-Market",
+    link: "https://www.za-market.com"
   },
   {
     title: "PRO",
@@ -51,7 +54,8 @@ const plans = [
       "Marketing services (addintional fees apply)"
     ],
     message: "Hi, I am .......... I want to get the Pro plan",
-    img: "Za-Market"
+    img: "Za-Market",
+    link: "https://www.za-market.com"
   }
 ];
 

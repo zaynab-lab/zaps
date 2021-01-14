@@ -1,7 +1,6 @@
 import TitleBox from "./TitleBox";
 import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa";
-import { useState } from "react";
 import Costs from "./Costs";
 
 export default function PlanBox({ plan }) {
@@ -26,7 +25,13 @@ export default function PlanBox({ plan }) {
           <div className="btnContainer">
             {plan.img && (
               <div className="img">
-                <img width="100%" src={`/img/${plan.img}.png`} alt={plan.img} />
+                <Link href={plan.link}>
+                  <img
+                    width="100%"
+                    src={`/img/${plan.img}.png`}
+                    alt={plan.img}
+                  />
+                </Link>
               </div>
             )}
             <Costs plan={plan} />
