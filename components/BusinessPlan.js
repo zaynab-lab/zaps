@@ -1,73 +1,68 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import Conditions from "./Conditions";
+import Solutions from "./Solutions";
+import { lines as l, techs as t } from "../public/ContractData";
 
 export default function BusinessPlan() {
-  const [lines, setLines] = useState([1, 2, 3, 4, 5]);
-  const [techs, setTechs] = useState([1, 2]);
-
+  const [next, setNext] = useState(true);
+  const [minTime, setMinTime] = useState(0);
+  const [maxTime, setMaxTime] = useState(0);
+  const [state, setDefaultState] = useState({ lines: l, techs: t });
+  const setState = (id, field, status) => {
+    if (field === "lines") {
+      let newLines = state.lines.map((line, i) =>
+        id === i ? { ...line, status: status } : line
+      );
+      setDefaultState({ techs: state.techs, lines: newLines });
+    } else {
+    }
+  };
+  useEffect(() => {
+    let newAverage = state.lines.filter((line) => line.status === "average");
+    let minValue = state.lines
+      .filter((line) => line.status === "min")
+      .map((line) => line.min);
+    let maxValue = state.lines
+      .filter((line) => line.status === "max")
+      .map((line) => line.max);
+    let min = newAverage.map((line) => line.min);
+    let max = newAverage.map((line) => line.max);
+    let newMinValue = minValue.concat(maxValue).concat(min);
+    let newMaxValue = minValue.concat(maxValue).concat(max);
+    newMinValue[0] && setMinTime(newMinValue.reduce((a, b) => a + b));
+    newMaxValue[0] && setMaxTime(newMaxValue.reduce((a, b) => a + b));
+  }, [state]);
   return (
     <>
       <div className="mainContainer">
         <div className="Details">
           <div id="first">
-            Company Name : <input />
+            Company Name : <input id="input" />
           </div>
           <div id="second">
-            Date : <input />
+            Date : <input id="input" />
           </div>
           <div id="third">
-            Address : <input />
+            Address : <input id="input" />
           </div>
           <div id="fourth">
-            Cost : <input />
+            Time & Cost : {minTime !== 0 && minTime}
+            {maxTime !== 0 && maxTime !== minTime && " - " + maxTime}
           </div>
         </div>
-        <div className="Box">
-          <span
-            className="Box-title"
-            onClick={() => {
-              setLines([1]);
-            }}
-          >
-            Solutions
-          </span>
-          {lines.map((line, i) => (
-            <div>
-              <span
-                onClick={() => {
-                  setLines([...lines, i + 1]);
-                }}
-              >
-                {i + 1}-
-              </span>
-              <input id="long" />
-            </div>
-          ))}
+        {next ? (
+          <Solutions state={state} setState={setState} />
+        ) : (
+          <Conditions />
+        )}
+        <div className="Signature">
+          <div>Delivery time _________________</div>
+          <div>Za-apps Signature _________________</div>
+          <div>Customer Signature _________________</div>
         </div>
-        <div className="Box">
-          <span
-            className="Box-title"
-            onClick={() => {
-              setTechs([1]);
-            }}
-          >
-            Technologies
-          </span>
-
-          {techs.map((tech, i) => (
-            <div>
-              <span
-                onClick={() => {
-                  setTechs([...techs, i + 1]);
-                }}
-              >
-                {i + 1}-
-              </span>
-              <input id="long" />
-            </div>
-          ))}
+        <div className={next && "next"} onClick={() => setNext(!next)}>
+          {next ? "Next >" : "< Prev"}
         </div>
-
-        <div>Customer Sign ___________________</div>
       </div>
 
       <style jsx>{`
@@ -83,15 +78,12 @@ export default function BusinessPlan() {
           display: flex;
           color: grey;
         }
-        input {
-          min-width: 10px;
+        #input {
           border: none;
-          font-size: 1.1rem;
           padding: 0 0.8rem;
+          font-size: 1.1rem;
         }
-        #long {
-          width: 95%;
-        }
+
         #first {
           flex: 1 1 65%;
         }
@@ -105,25 +97,18 @@ export default function BusinessPlan() {
           flex: 1 1 35%;
         }
 
-        .Box {
-          border: 1px solid black;
-          border-radius: 0.5rem;
-          padding: 0.5rem 0;
-          position: relative;
-          margin: 1.5rem 0;
+        .Signature {
+          display: flex;
+          justify-content: space-between;
+          color: grey;
+          flex-wrap: wrap;
+          margin-bottom: 2rem;
         }
-        .Box div:last-child {
-          border: none;
-        }
-        .Box-title {
-          position: absolute;
-          transform: translate(0.8rem, -1.5rem);
-          background: white;
-          font-size: 1.3rem;
-        }
-        .Box div {
+        .Signature div {
           padding: 0.5rem;
-          border-bottom: 1px solid #eee;
+        }
+        .next {
+          text-align: right;
         }
       `}</style>
     </>
