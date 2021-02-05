@@ -1,23 +1,23 @@
 export const lines = [
-  { label: "Initializing Project & Management System", min: 50, max: 70 },
-  { label: "Menu App", min: 15, max: 20 },
-  { label: "UX/UI", min: 10, max: 20 },
+  { label: "Initializing Project & Management System", min: 50, max: 100 },
+  { label: "Menu App", min: 15, max: 25 },
+  { label: "UX/UI", min: 20, max: 30 },
   { label: "Instalable on Devices", min: 10, max: 15 },
   { label: "Connecting to Whatsapp", min: 5, max: 15 },
   { label: "Send Notification", min: 15, max: 20 },
-  { label: "User Account", min: 15, max: 20 },
+  { label: "User Account", min: 20, max: 25 },
   { label: "Data Collection", min: 10, max: 15 },
-  { label: "Data Management System", min: 20, max: 40 },
-  { label: "Management System", min: 50, max: 70 },
+  { label: "Data Managing System", min: 20, max: 40 },
+  { label: "Management System", min: 50, max: 100 },
   { label: "Data Analysis", min: 15, max: 20 },
   { label: "Business Insights", min: 15, max: 20 }
 ];
 
 export const techs = [
   { label: "Reactjs", min: 10, max: 15 },
-  { label: "React Native", min: 30, max: 40 },
-  { label: "MongoDB", min: 10, max: 20 },
-  { label: "Nextjs", min: 10, max: 20 },
+  { label: "React Native", min: 30, max: 60 },
+  { label: "MongoDB", min: 10, max: 25 },
+  { label: "Nextjs", min: 15, max: 25 },
   { label: "Express", min: 10, max: 20 },
   { label: "Aws/Google services", min: 30, max: 40 }
 ];

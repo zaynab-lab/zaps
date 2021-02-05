@@ -59,6 +59,17 @@ export default function PlanBox({ plan }) {
           margin-top: 3rem;
           box-shadow: 0px 0px 10px 1px lightgrey;
         }
+        @media only screen and (min-width: 500px) {
+          .container {
+            flex: 0 1 21rem;
+          }
+        }
+        @media only screen and (min-width: 900px) {
+          .container {
+            flex: 0 1 24rem;
+          }
+        }
+
         .boxTitle {
           transform: translateY(-2rem);
         }

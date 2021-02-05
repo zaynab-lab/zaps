@@ -15,10 +15,20 @@ export default function BusinessPlan() {
       );
       setDefaultState({ techs: state.techs, lines: newLines });
     } else {
+      setDefaultState({
+        techs: state.techs.map((tech, i) =>
+          id === i
+            ? { ...tech, status: tech.status === "average" ? "" : "average" }
+            : tech
+        ),
+        lines: state.lines
+      });
     }
   };
   useEffect(() => {
-    let newAverage = state.lines.filter((line) => line.status === "average");
+    let newAverage = state.lines
+      .filter((line) => line.status === "average")
+      .concat(state.techs.filter((tech) => tech.status === "average"));
     let minValue = state.lines
       .filter((line) => line.status === "min")
       .map((line) => line.min);

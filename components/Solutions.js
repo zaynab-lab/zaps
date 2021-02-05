@@ -11,7 +11,7 @@ export default function Solutions({ state, setState }) {
       <div className="Box">
         <span className="Box-title">Technologies</span>
         {state.techs.map((tech, i) => (
-          <TeBox tech={tech} key={i} />
+          <TeBox tech={tech} i={i} setState={setState} />
         ))}
       </div>
 
@@ -77,13 +77,16 @@ const SoBox = ({ line, i, setState }) => {
   );
 };
 
-const TeBox = ({ tech }) => {
+const TeBox = ({ tech, i, setState }) => {
   return (
     <>
       <div className="Box-item">
         <span className="Box-details">
           <span className="label">{tech.label}</span>
-          <input type="checkBox" />
+          <input
+            type="checkBox"
+            onChange={() => setState(i, "techs", "average")}
+          />
         </span>
       </div>
       <style jsx>{`
