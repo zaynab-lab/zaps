@@ -27,7 +27,7 @@ export default function Solutions({ state, setState }) {
           position: absolute;
           transform: translate(0.8rem, -1.5rem);
           background: white;
-          font-size: 1.3rem;
+          font-size: 1.2rem;
         }
       `}</style>
     </>
@@ -54,6 +54,8 @@ const SoBox = ({ line, i, setState }) => {
         }
 
         .Box-item {
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
           padding: 0.5rem;
           border-bottom: 1px solid #eee;
@@ -64,13 +66,22 @@ const SoBox = ({ line, i, setState }) => {
         }
 
         .Box-details {
+          -webkit-box-flex: 1;
+          -ms-flex: 1 1 100%;
           flex: 1 1 100%;
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
+          -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
           justify-content: space-between;
         }
 
         select {
           background: white;
+          padding: 0.1rem;
+          border-radius: 0.2rem;
+          border: 1px solid #aaa;
         }
       `}</style>
     </>
@@ -95,6 +106,8 @@ const TeBox = ({ tech, i, setState }) => {
         }
 
         .Box-item {
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
           padding: 0.5rem;
           border-bottom: 1px solid #eee;
@@ -105,8 +118,14 @@ const TeBox = ({ tech, i, setState }) => {
         }
 
         .Box-details {
+          -webkit-box-flex: 1;
+          -ms-flex: 1 1 100%;
           flex: 1 1 100%;
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
+          -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
           justify-content: space-between;
         }
       `}</style>

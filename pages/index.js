@@ -65,6 +65,7 @@ export default function Index() {
           justify-content: center;
           align-items: center;
           margin: 1rem;
+          cursor: pointer;
         }
 
         .apps {

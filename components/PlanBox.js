@@ -139,6 +139,7 @@ export default function PlanBox({ plan }) {
           border: 1px solid ${plan.color};
           background: white;
           animation: Animation 10s ease 0s infinite normal none;
+          cursor: pointer;
         }
         @keyframes Animation {
           0% {

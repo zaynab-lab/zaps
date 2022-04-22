@@ -29,6 +29,7 @@ export default function Costs({ plan }) {
           color: white;
           border-radius: 0.5rem;
           margin: 2rem 0;
+          cursor: pointer;
         }
 
         .costs {
