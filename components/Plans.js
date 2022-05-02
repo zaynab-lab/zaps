@@ -3,7 +3,7 @@ import PlanBox from "../components/PlanBox";
 const plans = [
   {
     title: "BASIC",
-    color: "#3580D0",
+    color: "#CB4B2B",
     month: "49",
     annual: "45",
     percent: "0",
@@ -23,7 +23,7 @@ const plans = [
 
   {
     title: "STANDARD",
-    color: "#0ABAB5",
+    color: "#DDB669",
     month: "99",
     annual: "89",
     percent: "20",
