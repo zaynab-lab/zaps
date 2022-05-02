@@ -36,13 +36,13 @@ const plans = [
       "Marketing services (addintional fees apply)"
     ],
     message: "Hi, I am .......... I want to get the Standard plan",
-    img: "Drop-cafe",
-    link: "https://www.za-market.com"
+    img: "MogeTee",
+    link: "https://mogetee.vercel.app"
   },
 
   {
     title: "ADVANCE",
-    color: "#FF3565",
+    color: "#F4A460",
     month: "199",
     annual: "189",
     percent: "20",
@@ -58,12 +58,12 @@ const plans = [
 
     message: "Hi, I am .......... I want to get the Advance plan",
     img: "Za-market",
-    link: "https://www.za-market.com"
+    link: "https://za-market.vercel.app"
   },
 
   {
     title: "PRO",
-    color: "#F0A260",
+    color: "#FF4886",
     month: "299",
     annual: "270",
     percent: "40",
@@ -78,8 +78,8 @@ const plans = [
     ],
 
     message: "Hi, I am .......... I want to get the Pro plan",
-    img: "Za-market",
-    link: "https://www.za-market.com"
+    img: "zamenu",
+    link: "https://za-menu.vercel.app/"
   }
 ];
 

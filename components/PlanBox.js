@@ -22,6 +22,7 @@ export default function PlanBox({ plan }) {
               ))}
             </div>
           </div>
+          <div className="solutions">Sample</div>
           <div className="btnContainer">
             {plan.img && (
               <div className="img">
