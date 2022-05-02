@@ -78,7 +78,7 @@ const plans = [
     ],
 
     message: "Hi, I am .......... I want to get the Pro plan",
-    img: "zamenu",
+    img: "za-menu",
     link: "https://za-menu.vercel.app/"
   }
 ];
